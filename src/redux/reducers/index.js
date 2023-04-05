@@ -37,7 +37,7 @@ export function userReducer(userData = initialUser, action) {
         return {
           message: "",
           data: {},
-          isLoggedIn: true,
+          isLoggedIn: false,
           notify:false
         };
       default:
