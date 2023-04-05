@@ -41,7 +41,7 @@ const MenuItems = () => {
                             <span>
                             <UserOutlined />
                             <Link  className='text-decoration-none' to={`/`}>
-                            <span>Admin</span>
+                            <span>Tasks</span>
                             </Link>
                             
                             </span>
@@ -67,7 +67,7 @@ const MenuItems = () => {
                         title={
                             <span>
                             <UserOutlined />
-                            <Link  className='text-decoration-none' to={`/users`}>
+                            <Link  className='text-decoration-none' to={`/userssettings`}>
                             <span>User Settings</span>
                             </Link>
                             </span>

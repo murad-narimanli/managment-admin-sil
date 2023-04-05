@@ -9,7 +9,7 @@ const Routing = () => {
         <Routes>
             <Route path="/" element={<Tasks />} />
             <Route path="/users" element={<Users />} />
-            <Route path="/users" element={<UserSettings />} />
+            <Route path="/userssettings" element={<UserSettings />} />
             {/* <Route path="/results/:id" element={<Detail />} /> */}
             <Route path="*" element={<NoPage />} />
         </Routes>
