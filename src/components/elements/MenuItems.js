@@ -1,7 +1,7 @@
 import { UploadOutlined,FundOutlined, UserOutlined, VideoCameraOutlined } from "@ant-design/icons";
 import { Menu } from "antd";
 import { useState } from 'react'; 
-
+import { Link } from "react-router-dom";
 const { SubMenu } = Menu
 
 
@@ -40,7 +40,36 @@ const MenuItems = () => {
                         title={
                             <span>
                             <UserOutlined />
+                            <Link  className='text-decoration-none' to={`/`}>
                             <span>Admin</span>
+                            </Link>
+                            
+                            </span>
+                        }
+                    >
+                    
+                    </SubMenu>
+                    <SubMenu
+                        key="20"
+                        title={
+                            <span>
+                            <UserOutlined />
+                            <Link  className='text-decoration-none' to={`/users`}>
+                            <span>Users</span>
+                            </Link>
+                            </span>
+                        }
+                    >
+                    
+                    </SubMenu>
+                    <SubMenu
+                        key="11"
+                        title={
+                            <span>
+                            <UserOutlined />
+                            <Link  className='text-decoration-none' to={`/users`}>
+                            <span>User Settings</span>
+                            </Link>
                             </span>
                         }
                     >

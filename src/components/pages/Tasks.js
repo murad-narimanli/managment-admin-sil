@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Tasks = () => {
+const Tasks = (props) => {
   return (
     <div>Tasks</div>
   )
