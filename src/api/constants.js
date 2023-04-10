@@ -1,2 +1,1 @@
-export const siteUrl = 'http://localhost:3000'
-export const loginUrl = 'https://reqres.in/'
+export const apiUrl = 'http://localhost:4000'

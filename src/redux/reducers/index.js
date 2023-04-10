@@ -3,7 +3,6 @@ import { Types } from "../types";
 const initialUser = {
     isLoggedIn: true,
     data: {},
-    message: ""
 } 
 
 export function userReducer(userData = initialUser, action) {
@@ -14,14 +13,14 @@ export function userReducer(userData = initialUser, action) {
         let data = {...action.payload}
         return {
           data,
-          isLoggedIn: data.token !== null ?  true : false,
+          isLoggedIn: data.token !== null,
           message: "",
           notify:false
         };
       case Types.SET_USER:
         return {
           data: action.payload.data,
-          isLoggedIn: action.payload.data.token !== null ?  true : false,
+          isLoggedIn: action.payload.data.token !== null,
           message: "Successfully logged in",
           notify:true
         };

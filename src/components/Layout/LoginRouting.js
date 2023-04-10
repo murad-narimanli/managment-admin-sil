@@ -10,7 +10,7 @@ const LoginRouting = ({isLoggedIn}) => {
     useEffect(()=> {
         if(!isLoggedIn) {
             navigate('/')
-        }
+        } else (navigate('/tasks'))
     },[isLoggedIn])
     return (
         <Routes>

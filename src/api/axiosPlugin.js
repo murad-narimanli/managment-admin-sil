@@ -1,14 +1,14 @@
 import axios from "axios";
-import { loginUrl } from "./constants";
+import { apiUrl } from "./constants";
 
-export const login = axios.create({
-    baseURL: `${loginUrl}api/`,
+export const axiosPlugin = axios.create({
+    baseURL: apiUrl,
     headers: {
         "Content-Type": "application/json",
     },
 });
 
-login.interceptors.request.use(
+axiosPlugin.interceptors.request.use(
     (config) => {
         config.headers["Authorization"] = localStorage.getItem("access_token") ? "Bearer " + localStorage.getItem("access_token") : null;
         return config;
@@ -18,4 +18,4 @@ login.interceptors.request.use(
     }
 );
 
-export default login;
+export default axiosPlugin;

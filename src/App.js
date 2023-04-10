@@ -7,6 +7,7 @@ import LoginRouting from "./components/Layout/LoginRouting";
 import Loader from "./components/elements/Loader";
 import { connect } from "react-redux";
 import { getUserData } from "./redux/actions";
+import Registration from "./components/pages/Registration";
 
 function App(props) {
     let { isLoading, isLoggedIn, getUserData } = props;
@@ -25,6 +26,7 @@ function App(props) {
                     </MainLayout>
                 ) : (
                     <LoginRouting isLoggedIn={isLoggedIn} />
+                    // <Registration />
                 )}
             </BrowserRouter>
         </div>

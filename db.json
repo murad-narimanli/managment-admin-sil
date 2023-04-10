@@ -1,1 +1,106 @@
-{}
+{
+  "users": [
+    {
+      "id": 459824563802,
+      "username": "Social Innovation Lab(1)",
+      "companyname": "SIL",
+      "email": "ghuseynova.dev@gmail.com",
+      "password": "wdwdqw",
+      "isCompany": true,
+      "companyId": 459824563802,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
+    },
+    {
+      "id": 1438951605247,
+      "username": "Social Innovation Lab",
+      "companyname": "SIL",
+      "email": "ghuseynova.dev@gmail.com",
+      "password": "dwedwe",
+      "isCompany": true,
+      "companyId": 1438951605247,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
+    },
+    {
+      "id": 1131851521408,
+      "username": "Gullu",
+      "companyname": "SIL",
+      "email": "ghuseynova.dev@gmail.com",
+      "password": "12345",
+      "isCompany": true,
+      "companyId": 1131851521408,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
+    },
+    {
+      "id": 880732347066,
+      "username": "Gullu",
+      "companyname": "Company",
+      "email": "ghuseynova.dev@gmail.com",
+      "password": "123456",
+      "isCompany": true,
+      "companyId": 880732347066,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
+    },
+    {
+      "id": 1223880558325,
+      "username": "Gullu",
+      "companyname": "SIL",
+      "email": "ghuseynova.dev@gmail.com",
+      "password": "123",
+      "isCompany": true,
+      "companyId": 1223880558325,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
+    },
+    {
+      "id": 177502373131,
+      "username": "gulluuuu",
+      "companyname": "aaaa",
+      "email": "ghuseynova.dev@gmail.com",
+      "password": "vsdevsww",
+      "isCompany": true,
+      "companyId": 177502373131,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
+    }
+  ]
+}
