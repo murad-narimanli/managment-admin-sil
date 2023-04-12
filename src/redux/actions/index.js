@@ -1,7 +1,10 @@
 import { Types } from "../types";
 import axiosPlugin from "../../api/axiosPlugin";
 import history from "../../const/history";
+import { message } from "antd";
 
+
+// loginuserle birlikde chalıshır
 export const getUserData = (id) => (dispatch) => {
     dispatch({ type: Types.LOADING_ON });
     let accessToken = localStorage.getItem("access_token") || sessionStorage.getItem("access_token");
@@ -12,13 +15,16 @@ export const getUserData = (id) => (dispatch) => {
             .then((res) => {
                 dispatch({
                     type: Types.SET_USER_LOGGED_IN,
+
                     payload: { isLoggedIn: true, ...res.data.data },
                 });
+                message.success("Login Successful!");
                 history.push("/tasks");
             })
             .catch((err) => {
                 dispatch({
-                    type: Types.LOG_OUT,
+                    type: Types.SET_USER_LOGGED_IN,
+                    payload: { isLoggedIn: false },
                 });
                 history.push("/");
             })
@@ -63,11 +69,8 @@ export const logInUser = (u, p, remember) => async (dispatch) => {
     }
 };
 
-
 export const registerAction = (values) => (dispatch) => {
     let id = parseInt(Number(Math.random() * Date.now()));
-
-    // console.log("registerUser");
     axiosPlugin
         .post("/users", {
             id,
@@ -86,27 +89,32 @@ export const registerAction = (values) => (dispatch) => {
         .then((res) => {
             console.log(res, "user registered");
             localStorage.setItem("access_token", res.data.id);
+            dispatch({
+                type: Types.ADMIN_REGISTERED,
+                payload: {
+                    isRegistered: true,
+                },
+            });
         })
         .catch((err) => {
             console.log(err);
         });
 };
 
-
-
-
-
-
+export const logOut = () => (dispatch) => {
+    localStorage.removeItem("access_token");
+    history.push("/");
+    dispatch({
+        type: Types.LOG_OUT,
+        payload: {
+            isLoggedIn: false,
+            isRegistered: false,
+        },
+    });
+};
 
 
 
 export const toggleLoading = (payload) => ({
     type: payload ? Types.LOADING_ON : Types.LOADING_OFF,
 });
-
-export const logOut = () => (dispatch) => {
-    history.push("/");
-    dispatch({
-        type: Types.LOG_OUT,
-    });
-};

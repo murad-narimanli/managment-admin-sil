@@ -3,6 +3,7 @@ import { Avatar, Popover, Layout, Button } from "antd";
 import { MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, SettingOutlined, LogoutOutlined } from "@ant-design/icons";
 import { connect } from "react-redux";
 import { logOut } from "../../redux/actions";
+import { Link } from "react-router-dom";
 
 const { Header } = Layout;
 
@@ -16,10 +17,13 @@ const HeaderMain = ({ setCollapsed, colorBgContainer, collapsed,user,logOut}) =>
                 <SettingOutlined />
                 Log out
             </Button>
+            <Link to={"/usersettings"}>
             <Button className="me-2 d-flex align-items-center">
                 <LogoutOutlined />
                 Settings
             </Button>
+            </Link>
+            
         </div>
     );
     return (

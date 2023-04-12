@@ -7,11 +7,10 @@ import UserSettings from './../pages/UserSettings';
 const Routing = () => {
     return (
         <Routes>
+            <Route path="/" element={<Tasks />} />
             <Route path="/tasks" element={<Tasks />} />
             <Route path="/users" element={<Users />} />
             <Route path="/userssettings" element={<UserSettings />} />
-            {/* <Route path="/results/:id" element={<Detail />} /> */}
-            {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
     );
 };

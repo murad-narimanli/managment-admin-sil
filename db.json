@@ -101,6 +101,40 @@
         "changeStatus": true,
         "changeSettings": true
       }
+    },
+    {
+      "id": 593610560735,
+      "username": "novruz",
+      "companyname": "novruz",
+      "email": "novruz95@gmail.com",
+      "password": "1",
+      "isCompany": true,
+      "companyId": 593610560735,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
+    },
+    {
+      "id": 282791889304,
+      "username": "narmin",
+      "companyname": "narmin",
+      "email": "narmin2000@gmail.com",
+      "password": "1",
+      "isCompany": true,
+      "companyId": 282791889304,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
     }
   ]
 }

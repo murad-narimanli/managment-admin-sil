@@ -1,100 +1,111 @@
-import { Button, Checkbox, Form, Input, Row, Col, message } from "antd";
+import { Button, Checkbox, Form, Input, Row, Col, message, Typography, Divider } from "antd";
 import { logInUser } from "../../redux/actions";
 import { connect } from "react-redux";
 import { useEffect } from "react";
+import "../../assets/css/login.scss";
+import { GoogleOutlined, TwitterOutlined, FacebookFilled } from "@ant-design/icons";
+import { useNavigate, Link } from "react-router-dom";
 
 const Login = (props) => {
-    let { logInUser, notify, isLoggedIn } = props;
+    let navigate = useNavigate();
+    let { logInUser, notify, loggedIn } = props;
+
     const onFinish = async (values) => {
         let { username, password, remember } = values;
         await logInUser(username, password, remember);
     };
+
     const onFinishFailed = (errorInfo) => {
         console.log("Failed:", errorInfo);
     };
-
-
-
+    const login = () => {
+        message.success("Login Successful!");
+    };
+    
     useEffect(() => {
         if (props.message.trim().length !== 0) {
             message.warning(props.message);
         }
     }, [props.message, notify]);
 
+   
 
-    
     return (
-        <div>
-            <div className="p-5 mt-5 bg-white">
-                <h3 className="text-center">Login</h3>
-                <Form
-                    name="basic"
-                    labelCol={{
-                        span: 8,
-                    }}
-                    wrapperCol={{
-                        span: 16,
-                    }}
-                    style={{
-                        marginTop: "100px",
-                        maxWidth: 900,
-                    }}
-                    initialValues={{
-                        remember: true,
-                    }}
-                    onFinish={onFinish}
-                    onFinishFailed={onFinishFailed}
-                    autoComplete="off"
+        <div className=" appBg">
+            <Form
+                className="loginForm"
+                name="basic"
+                initialValues={{
+                    remember: true,
+                }}
+                onFinish={onFinish}
+                onFinishFailed={onFinishFailed}
+                autoComplete="off"
+            >
+                <Typography.Title className="title">Login to your Account</Typography.Title>
+                <Form.Item
+                    name="username"
+                    rules={[
+                        {
+                            required: true,
+                            message: "Enter your username!",
+                        },
+                    ]}
                 >
-                    <Form.Item
-                        label="Username"
-                        name="username"
-                        rules={[
-                            {
-                                required: true,
-                                message: "Please input your username!",
-                            },
-                        ]}
-                    >
-                        <Input />
-                    </Form.Item>
+                    <Input placeholder="Enter your username" className="input" />
+                </Form.Item>
 
-                    <Form.Item
-                        label="Password"
-                        name="password"
-                        rules={[
-                            {
-                                required: true,
-                                message: "Please input your password!",
-                            },
-                        ]}
-                    >
-                        <Input.Password />
-                    </Form.Item>
+                <Form.Item
+                    name="password"
+                    rules={[
+                        {
+                            required: true,
+                            message: "Enter your password!",
+                        },
+                    ]}
+                >
+                    <Input.Password placeholder="Enter your password" className="input" />
+                </Form.Item>
 
-                    <Form.Item
-                        name="remember"
-                        valuePropName="checked"
-                        wrapperCol={{
-                            offset: 8,
-                            span: 16,
+                <Form.Item name="remember" valuePropName="checked">
+                    <Checkbox >Remember me</Checkbox>
+                </Form.Item>
+
+                <Form.Item>
+                    <Button
+                        type="primary"
+                        htmlType="submit"
+                        block
+                        className="btn"
+                        style={{
+                            color: "white",
+                            fontSize: "13px",
+                            background: " rgb(9, 66, 9)",
+                            border: "1px solid rgb(9, 66, 9)",
+                            marginBottom: "10px",
                         }}
                     >
-                        <Checkbox>Remember me</Checkbox>
-                    </Form.Item>
-
-                    <Form.Item
-                        wrapperCol={{
-                            offset: 8,
-                            span: 16,
-                        }}
-                    >
-                        <Button type="primary" htmlType="submit">
-                            Submit
+                        Log In
+                    </Button>
+                    <Link to={"/register"}>
+                        <Button
+                            type="primary"
+                            htmlType="button"
+                            block
+                            style={{ color: "white", fontSize: "13px", background: " rgb(9, 66, 9)", border: "1px solid rgb(9, 66, 9)" }}
+                        >
+                            Register
                         </Button>
-                    </Form.Item>
-                </Form>
-            </div>
+                    </Link>
+
+                    <Divider style={{ borderColor: "black" }}>or Login with</Divider>
+                </Form.Item>
+                <div className="sociaLogins">
+                    <GoogleOutlined className="socialIcon" onClick={login} />
+                    <FacebookFilled className="socialIcon" onClick={login} />
+                    <TwitterOutlined className="socialIcon" onClick={login} />
+                </div>
+            </Form>
         </div>
     );
 };

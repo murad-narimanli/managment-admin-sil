@@ -27,7 +27,6 @@ const MenuItems = () => {
 
     return (
         <>
-            <div className="logo">Domain Finder</div>
             <Menu
                 openKeys={openKeys}
                 mode="inline"
@@ -40,7 +39,7 @@ const MenuItems = () => {
                         title={
                             <span>
                             <UserOutlined />
-                            <Link  className='text-decoration-none' to={`/`}>
+                            <Link  className='text-decoration-none' to={`/tasks`}>
                             <span>Tasks</span>
                             </Link>
                             

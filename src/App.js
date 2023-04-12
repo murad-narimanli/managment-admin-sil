@@ -8,9 +8,10 @@ import Loader from "./components/elements/Loader";
 import { connect } from "react-redux";
 import { getUserData } from "./redux/actions";
 import Registration from "./components/pages/Registration";
+import { logInUser } from "./redux/actions/index";
 
 function App(props) {
-    let { isLoading, isLoggedIn, getUserData } = props;
+    let { isLoading, isLoggedIn, getUserData, isRegistered, logInUser } = props;
 
     useEffect(() => {
         getUserData();
@@ -19,6 +20,7 @@ function App(props) {
     return (
         <div className="App">
             {isLoading ? <Loader /> : ""}
+            
             <BrowserRouter>
                 {isLoggedIn ? (
                     <MainLayout>
@@ -26,7 +28,6 @@ function App(props) {
                     </MainLayout>
                 ) : (
                     <LoginRouting isLoggedIn={isLoggedIn} />
-                    // <Registration />
                 )}
             </BrowserRouter>
         </div>
@@ -36,6 +37,7 @@ function App(props) {
 const mapStateToProps = (state) => ({
     isLoading: state.isLoading,
     isLoggedIn: state.user.isLoggedIn,
+    isRegistered: state.user.isRegistered,
 });
 
-export default connect(mapStateToProps, { getUserData })(App);
+export default connect(mapStateToProps, { getUserData, logInUser })(App);

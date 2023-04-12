@@ -3,6 +3,8 @@ import { Types } from "../types";
 const initialUser = {
     isLoggedIn: true,
     data: {},
+    isRegistered: false,
+
 } 
 
 export function userReducer(userData = initialUser, action) {
@@ -13,16 +15,9 @@ export function userReducer(userData = initialUser, action) {
         let data = {...action.payload}
         return {
           data,
-          isLoggedIn: data.token !== null,
+          isLoggedIn: data.id !== null,
           message: "",
           notify:false
-        };
-      case Types.SET_USER:
-        return {
-          data: action.payload.data,
-          isLoggedIn: action.payload.data.token !== null,
-          message: "Successfully logged in",
-          notify:true
         };
       case Types.SET_USER_ERROR:
         return {
@@ -31,8 +26,6 @@ export function userReducer(userData = initialUser, action) {
           notify:true
         };
       case Types.LOG_OUT:
-        localStorage.removeItem('access_token')
-        sessionStorage.removeItem('access_token')
         return {
           message: "",
           data: {},

@@ -1,8 +1,13 @@
 import React from "react";
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, message } from "antd";
 import { registerAction } from "../../redux/actions";
 import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 const Registration = (props) => {
+    const { user, registerAction, registered, getData } = props;
+    let navigate = useNavigate();
+
     const registerUser = async (...values) => {
         await props.registerAction(...values);
     };
@@ -64,15 +69,18 @@ const Registration = (props) => {
                         span: 16,
                     }}
                 >
-                        <Button type="primary" htmlType="submit">
-                            Submit
-                        </Button>
+                    <Button type="primary" htmlType="submit">
+                        Submit
+                    </Button>
                 </Form.Item>
             </Form>
         </div>
     );
 };
 
-const mapStateToProps = () => ({});
+const mapStateToProps = (state) => ({
+    isLoggedIn: state.user.isLoggedIn,
+    isRegistered: state.user.isRegistered,
+});
 
 export default connect(mapStateToProps, { registerAction })(Registration);
