@@ -4,6 +4,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { loaderReducer } from "./reducers";
 import { userReducer } from './reducers/index';
 
+
 const rootReducer = combineReducers({
     isLoading: loaderReducer,
     user: userReducer
