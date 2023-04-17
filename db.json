@@ -1,115 +1,13 @@
 {
-  "users": [
+  "companies": [
     {
-      "id": 459824563802,
-      "username": "Social Innovation Lab(1)",
+      "id": 22319057889,
+      "username": "gullu",
       "companyname": "SIL",
       "email": "ghuseynova.dev@gmail.com",
-      "password": "wdwdqw",
-      "isCompany": true,
-      "companyId": 459824563802,
-      "role": {
-        "admin": true,
-        "editTask": true,
-        "addTask": true,
-        "deleteTask": true,
-        "changeStatus": true,
-        "changeSettings": true
-      }
-    },
-    {
-      "id": 1438951605247,
-      "username": "Social Innovation Lab",
-      "companyname": "SIL",
-      "email": "ghuseynova.dev@gmail.com",
-      "password": "dwedwe",
-      "isCompany": true,
-      "companyId": 1438951605247,
-      "role": {
-        "admin": true,
-        "editTask": true,
-        "addTask": true,
-        "deleteTask": true,
-        "changeStatus": true,
-        "changeSettings": true
-      }
-    },
-    {
-      "id": 1131851521408,
-      "username": "Gullu",
-      "companyname": "SIL",
-      "email": "ghuseynova.dev@gmail.com",
-      "password": "12345",
-      "isCompany": true,
-      "companyId": 1131851521408,
-      "role": {
-        "admin": true,
-        "editTask": true,
-        "addTask": true,
-        "deleteTask": true,
-        "changeStatus": true,
-        "changeSettings": true
-      }
-    },
-    {
-      "id": 880732347066,
-      "username": "Gullu",
-      "companyname": "Company",
-      "email": "ghuseynova.dev@gmail.com",
-      "password": "123456",
-      "isCompany": true,
-      "companyId": 880732347066,
-      "role": {
-        "admin": true,
-        "editTask": true,
-        "addTask": true,
-        "deleteTask": true,
-        "changeStatus": true,
-        "changeSettings": true
-      }
-    },
-    {
-      "id": 1223880558325,
-      "username": "Gullu",
-      "companyname": "SIL",
-      "email": "ghuseynova.dev@gmail.com",
-      "password": "123",
-      "isCompany": true,
-      "companyId": 1223880558325,
-      "role": {
-        "admin": true,
-        "editTask": true,
-        "addTask": true,
-        "deleteTask": true,
-        "changeStatus": true,
-        "changeSettings": true
-      }
-    },
-    {
-      "id": 177502373131,
-      "username": "gulluuuu",
-      "companyname": "aaaa",
-      "email": "ghuseynova.dev@gmail.com",
-      "password": "vsdevsww",
-      "isCompany": true,
-      "companyId": 177502373131,
-      "role": {
-        "admin": true,
-        "editTask": true,
-        "addTask": true,
-        "deleteTask": true,
-        "changeStatus": true,
-        "changeSettings": true
-      }
-    },
-    {
-      "id": 593610560735,
-      "username": "novruz",
-      "companyname": "novruz",
-      "email": "novruz95@gmail.com",
       "password": "1",
       "isCompany": true,
-      "companyId": 593610560735,
+      "companyId": 22319057889,
       "role": {
         "admin": true,
         "editTask": true,
@@ -120,21 +18,99 @@
       }
     },
     {
-      "id": 282791889304,
-      "username": "narmin",
-      "companyname": "narmin",
-      "email": "narmin2000@gmail.com",
+      "name": "111",
+      "surname": "11111",
+      "username": "11111",
+      "email": "11111@gmail.com",
       "password": "1",
-      "isCompany": true,
-      "companyId": 282791889304,
+      "isCompany": false,
+      "companyId": 22319057889,
+      "companyName": "SIL",
       "role": {
-        "admin": true,
-        "editTask": true,
-        "addTask": true,
-        "deleteTask": true,
+        "admin": false,
+        "editTask": false,
+        "addTask": false,
+        "deleteTask": false,
+        "changeStatus": false,
+        "changeSettings": false
+      },
+      "id": 22319057890
+    },
+    {
+      "name": "aaaa",
+      "surname": "aaaaa",
+      "username": "aaaaa",
+      "email": "aaaaa@gmail.com",
+      "password": "1",
+      "isCompany": false,
+      "companyId": 22319057889,
+      "companyName": "SIL",
+      "role": {
+        "admin": false,
+        "editTask": false,
+        "addTask": false,
+        "deleteTask": false,
+        "changeStatus": false,
+        "changeSettings": false
+      },
+      "id": 22319057891
+    },
+    {
+      "name": "createUser",
+      "surname": "createUser",
+      "username": "user1",
+      "email": "user@gmail.com",
+      "password": "1",
+      "isCompany": false,
+      "companyId": 22319057889,
+      "companyName": "SIL",
+      "role": {
+        "admin": false,
+        "editTask": false,
+        "addTask": false,
+        "deleteTask": false,
+        "changeStatus": false,
+        "changeSettings": false
+      },
+      "id": 22319057892
+    },
+    {
+      "name": "aaa",
+      "surname": "aaaaa",
+      "username": "aaaaa",
+      "email": "aaa@gmail.com",
+      "password": "1",
+      "isCompany": false,
+      "companyId": 22319057889,
+      "companyName": "SIL",
+      "role": {
+        "admin": false,
+        "editTask": false,
+        "addTask": false,
+        "deleteTask": false,
         "changeStatus": true,
-        "changeSettings": true
-      }
+        "changeSettings": false
+      },
+      "id": 22319057893
+    },
+    {
+      "name": "Gullu",
+      "surname": "Huseynova",
+      "username": "gullu",
+      "email": "gullu@gmail.com",
+      "password": "1",
+      "isCompany": false,
+      "companyId": 22319057889,
+      "companyName": "SIL",
+      "role": {
+        "admin": false,
+        "editTask": false,
+        "addTask": false,
+        "deleteTask": false,
+        "changeStatus": true,
+        "changeSettings": false
+      },
+      "id": 22319057894
     }
   ]
 }

@@ -1,11 +1,21 @@
-import React from "react";
-// import { Button, Select, Form, Input, InputNumber  , Row , Col } from 'antd';
+import React, { useEffect } from "react";
 import { Button, Form, Row, Col, Input, Switch, Space } from "antd";
 import { UnorderedListOutlined } from "@ant-design/icons";
-import NoData from "../elements/NoData";
+import { createUser, getCompanyUsers } from "../../redux/actions";
+import { connect } from "react-redux";
+import UsersTable from "../elements/UsersTable";
 
-const Users = (props) => {
+const Users = ({ companyData, companyUsersData, createUser, getCompanyUsers }) => {
     const [form] = Form.useForm();
+
+    const onFinish = async (data) => {
+        await createUser({ ...data, companyId: companyData.companyId, companyName: companyData.companyname });
+        getCompanyUsers();
+    };
+
+    useEffect(() => {
+        getCompanyUsers();
+    }, []);
 
     return (
         <div>
@@ -19,10 +29,10 @@ const Users = (props) => {
                     </div>
                 </Col>
                 <Col xs={12}>
-                    <NoData />
+                    <UsersTable data={companyUsersData} />
                 </Col>
                 <Col xs={12} className="bg-light border p-5 shadow">
-                    <Form form={form} autoComplete="off">
+                    <Form form={form} autoComplete="off" onFinish={onFinish}>
                         <Form.Item
                             label="Name"
                             name="name"
@@ -122,4 +132,9 @@ const Users = (props) => {
     );
 };
 
-export default Users;
+const mapStateToProps = (state) => ({
+    companyData: state.user.companyData,
+    companyUsersData: state.user.companyUsersData,
+});
+
+export default connect(mapStateToProps, { createUser, getCompanyUsers })(Users);

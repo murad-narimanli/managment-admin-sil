@@ -1,23 +1,26 @@
 import React from "react";
-import { Button, Form, Input, message } from "antd";
-import { registerAction } from "../../redux/actions";
+import { Button, Form, Input, message, Typography } from "antd";
+import { registerAdmin } from "../../redux/actions";
 import { connect } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import "../../assets/css/registration.scss";
 
 const Registration = (props) => {
-    const { user, registerAction, registered, getData } = props;
+    const { user, registerAdmin, registered, getData } = props;
     let navigate = useNavigate();
 
-    const registerUser = async (...values) => {
-        await props.registerAction(...values);
+    const registerUser = (...values) => {
+        props.registerAdmin(...values);
     };
 
     return (
-        <div>
-            <Form name="basic" onFinish={registerUser}>
+        <div className="appBg">
+            <h3>Manage Your Tasks</h3>
+            <Form name="basic" onFinish={registerUser} className="loginForm">
+                <Typography.Title className="title">Create Your Account</Typography.Title>
+
                 <Form.Item
                     name="username"
-                    label="Username"
                     rules={[
                         {
                             required: true,
@@ -25,23 +28,21 @@ const Registration = (props) => {
                         },
                     ]}
                 >
-                    <Input />
+                    <Input placeholder="Please input your username!" className="input" />
                 </Form.Item>
                 <Form.Item
                     name="companyname"
-                    label="Company Name"
                     rules={[
                         {
                             required: true,
-                            message: "Please input your email!",
+                            message: "Please input your company name!",
                         },
                     ]}
                 >
-                    <Input />
+                    <Input placeholder="Please input your company name!" className="input" />
                 </Form.Item>
                 <Form.Item
                     name="email"
-                    label="Email"
                     rules={[
                         {
                             required: true,
@@ -49,11 +50,10 @@ const Registration = (props) => {
                         },
                     ]}
                 >
-                    <Input />
+                    <Input placeholder="Please input your email!" className="input" />
                 </Form.Item>
                 <Form.Item
                     name="password"
-                    label="Password"
                     rules={[
                         {
                             required: true,
@@ -61,17 +61,39 @@ const Registration = (props) => {
                         },
                     ]}
                 >
-                    <Input.Password />
+                    <Input.Password placeholder="Please input your company password!" className="input" />
                 </Form.Item>
-                <Form.Item
-                    wrapperCol={{
-                        offset: 8,
-                        span: 16,
-                    }}
-                >
-                    <Button type="primary" htmlType="submit">
-                        Submit
+                <Form.Item>
+                    <Button
+                        type="primary"
+                        block
+                        htmlType="submit"
+                        style={{
+                            color: "white",
+                            fontSize: "13px",
+                            background: " rgb(9, 66, 9)",
+                            border: "1px solid rgb(9, 66, 9)",
+                            marginBottom: "10px",
+                        }}
+                    >
+                        Register
                     </Button>
+                    <Link to={"/"}>
+                        <Button
+                            type="primary"
+                            block
+                            htmlType="submit"
+                            style={{
+                                color: "white",
+                                fontSize: "13px",
+                                background: " rgb(9, 66, 9)",
+                                border: "1px solid rgb(9, 66, 9)",
+                                marginBottom: "10px",
+                            }}
+                        >
+                            Login
+                        </Button>
+                    </Link>
                 </Form.Item>
             </Form>
         </div>
@@ -83,4 +105,4 @@ const mapStateToProps = (state) => ({
     isRegistered: state.user.isRegistered,
 });
 
-export default connect(mapStateToProps, { registerAction })(Registration);
+export default connect(mapStateToProps, { registerAdmin })(Registration);

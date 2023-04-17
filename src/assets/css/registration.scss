@@ -18,23 +18,11 @@
 
         .title {
             color: black;
-            font-size: 2.5rem;
+            font-size: 1.5rem;
+            text-align: center;
         }
         .input {
             width: 400px;
-        }
-        .sociaLogins {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            font-size: 20px;
-
-            .socialIcon {
-                cursor: pointer;
-                :hover {
-                    color: white;
-                }
-            }
         }
     }
 }

@@ -1,18 +1,22 @@
-import { Button, Checkbox, Form, Input, Row, Col, message, Typography, Divider } from "antd";
-import { logInUser } from "../../redux/actions";
+import { Button, Checkbox, Form, Input, message, Typography, Divider } from "antd";
+import { logIn, getCompany } from "../../redux/actions";
 import { connect } from "react-redux";
 import { useEffect } from "react";
 import "../../assets/css/login.scss";
 import { GoogleOutlined, TwitterOutlined, FacebookFilled } from "@ant-design/icons";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import history from "../../const/history";
 
 const Login = (props) => {
-    let navigate = useNavigate();
-    let { logInUser, notify, loggedIn } = props;
+    const { logIn, notify, isLoggedIn, getCompany } = props;
 
     const onFinish = async (values) => {
         let { username, password, remember } = values;
-        await logInUser(username, password, remember);
+        await logIn(username, password, remember);
+        if (isLoggedIn) {
+            message.success("Login Successful!");
+            history.push("/tasks");
+        }
     };
 
     const onFinishFailed = (errorInfo) => {
@@ -21,14 +25,12 @@ const Login = (props) => {
     const login = () => {
         message.success("Login Successful!");
     };
-    
+
     useEffect(() => {
-        if (props.message.trim().length !== 0) {
+        if (props.message && props.message.trim().length !== 0) {
             message.warning(props.message);
         }
     }, [props.message, notify]);
-
-   
 
     return (
         <div className=" appBg">
@@ -68,7 +70,7 @@ const Login = (props) => {
                 </Form.Item>
 
                 <Form.Item name="remember" valuePropName="checked">
-                    <Checkbox >Remember me</Checkbox>
+                    <Checkbox>Remember me</Checkbox>
                 </Form.Item>
 
                 <Form.Item>
@@ -116,4 +118,4 @@ const mapStateToProps = ({ user }) => ({
     notify: user.notify,
 });
 
-export default connect(mapStateToProps, { logInUser })(Login);
+export default connect(mapStateToProps, { logIn, getCompany })(Login);

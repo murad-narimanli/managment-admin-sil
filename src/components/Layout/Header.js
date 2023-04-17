@@ -9,20 +9,21 @@ const { Header } = Layout;
 
 const HeaderMain = ({ setCollapsed, colorBgContainer, collapsed,user,logOut}) => {
 
-    const text = <span>{user.data.first_name + ' ' + user.data.last_name}</span>;
+    const text = <span>{user.companyData.first_name + ' ' + user.companyData.last_name}</span>;
 
     const content = (
         <div className="d-flex justify-content-between">
-            <Button onClick={() => {logOut()}} className="me-2 d-flex align-items-center">
-                <SettingOutlined />
-                Log out
-            </Button>
-            <Link to={"/usersettings"}>
+            <Link to={'/'}>
+                <Button onClick={() => {logOut()}} className="me-2 d-flex align-items-center">
+                    <SettingOutlined />
+                    Log out
+                </Button>
+            </Link>
+            
             <Button className="me-2 d-flex align-items-center">
                 <LogoutOutlined />
                 Settings
             </Button>
-            </Link>
             
         </div>
     );
@@ -41,7 +42,7 @@ const HeaderMain = ({ setCollapsed, colorBgContainer, collapsed,user,logOut}) =>
                     })}
 
                     <Popover placement="bottomLeft" title={text} content={content} trigger="click">
-                        <Avatar src={user.data.avatar} className="me-3 d-flex justify-content-center align-items-center" size={30} icon={<UserOutlined />} />
+                        <Avatar src={user.companyData.avatar} className="me-3 d-flex justify-content-center align-items-center" size={30} icon={<UserOutlined />} />
                     </Popover>
                 </div>
             </Header>
@@ -50,9 +51,7 @@ const HeaderMain = ({ setCollapsed, colorBgContainer, collapsed,user,logOut}) =>
 };
 
 const mapStateToProps = ({user}) => ({
-   
     user
-   
 });
 
 export default connect(mapStateToProps, { logOut })(HeaderMain);
