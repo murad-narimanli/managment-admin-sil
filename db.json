@@ -164,6 +164,25 @@
         "changeStatus": true,
         "changeSettings": true
       }
+    },
+    {
+      "name": "gullu",
+      "surname": "gullu",
+      "username": "gullu",
+      "email": "gullu@gmail.com",
+      "password": "1",
+      "isCompany": false,
+      "companyId": 22319057889,
+      "companyName": "SIL",
+      "role": {
+        "admin": false,
+        "editTask": false,
+        "addTask": false,
+        "deleteTask": false,
+        "changeStatus": false,
+        "changeSettings": false
+      },
+      "id": 1008482028008
     }
   ]
 }

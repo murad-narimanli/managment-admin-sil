@@ -1,5 +1,5 @@
 import {Routes, Route} from "react-router-dom";
-import Tasks from "../pages/Tasks";
+import Tasks from "../pages/Tasks/TaskManager";
 import Users from './../pages/Users';
 import UserSettings from './../pages/UserSettings';
 import NoPage from "../elements/NoPage";
