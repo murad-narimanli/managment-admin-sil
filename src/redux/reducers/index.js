@@ -13,7 +13,7 @@ export const userReducer = (user = initialUser, action) => {
         case Types.LOG_OUT:
         case Types.GET_USER:
         case Types.SET_COMPANY_USERS:
-            return {...user,...action.payload};
+            return { ...user, ...action.payload };
         default:
             return user;
     }

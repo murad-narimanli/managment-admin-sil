@@ -111,6 +111,59 @@
         "changeSettings": false
       },
       "id": 22319057894
+    },
+    {
+      "name": "deneme1",
+      "surname": "deneme1",
+      "username": "deneme1",
+      "email": "deneme1@gmail.com",
+      "password": "1",
+      "isCompany": false,
+      "companyId": 22319057889,
+      "companyName": "SIL",
+      "role": {
+        "admin": false,
+        "editTask": false,
+        "addTask": false,
+        "deleteTask": false,
+        "changeStatus": false,
+        "changeSettings": false
+      },
+      "id": 22319057895
+    },
+    {
+      "id": 1008482028007,
+      "username": "narmin",
+      "companyname": "SIL",
+      "email": "narminabdulova@gmail.com",
+      "password": "1",
+      "isCompany": true,
+      "companyId": 1008482028007,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
+    },
+    {
+      "id": 954892776524,
+      "username": "novruz",
+      "companyname": "SIL",
+      "email": "novruz95@gmail.com",
+      "password": "1",
+      "isCompany": true,
+      "companyId": 954892776524,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
     }
   ]
 }

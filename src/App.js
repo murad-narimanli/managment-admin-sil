@@ -8,7 +8,6 @@ import { getCompany } from "./redux/actions";
 import { useEffect } from "react";
 
 function App(props) {
-
     let { isLoading, isLoggedIn, getCompany } = props;
 
     useEffect(() => {

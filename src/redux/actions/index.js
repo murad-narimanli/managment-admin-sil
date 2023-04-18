@@ -39,7 +39,7 @@ export const getCompany = (id) => async (dispatch) => {
     axiosPlugin
         .get(`/companies/${id}`)
         .then((res) => {
-            console.log(res.data)
+            console.log(res.data);
             dispatch({
                 type: Types.SET_COMPANY,
                 payload: {
@@ -49,15 +49,12 @@ export const getCompany = (id) => async (dispatch) => {
             });
         })
         .catch((err) => {
-           console.error(err)
+            console.error(err);
         })
         .finally(() => {
             dispatch({ type: Types.LOADING_OFF });
         });
 };
-
-
-
 
 export const logIn = (u, p, remember) => async (dispatch) => {
     if (u.trim().length === 0 || p.trim().length === 0) {
@@ -88,15 +85,14 @@ export const logIn = (u, p, remember) => async (dispatch) => {
     }
 };
 
-
 export const createUser = (values) => (dispatch) => {
     axiosPlugin
         .post("/companies", {
             name: values.name,
             surname: values.surname,
             username: values.username,
-            email:values.email,
-            password:values.password,
+            email: values.email,
+            password: values.password,
             isCompany: false,
             companyId: values.companyId,
             companyName: values.companyName,
@@ -111,14 +107,11 @@ export const createUser = (values) => (dispatch) => {
         })
         .then((res) => {
             console.log(res, "user registered");
-            localStorage.setItem("access_token", res.data.id);
         })
         .catch((err) => {
             console.log(err);
         });
 };
-
-
 
 export const getCompanyUsers = () => async (dispatch) => {
     axiosPlugin
@@ -133,9 +126,8 @@ export const getCompanyUsers = () => async (dispatch) => {
         })
         .catch((err) => {
             console.log(err);
-        })
+        });
 };
-
 
 export const logOut = () => (dispatch) => {
     localStorage.removeItem("access_token");
