@@ -4,7 +4,6 @@ const initialUser = {
     isLoggedIn: false,
     isRegistered: false,
     companyData: {},
-    companyUsersData: [],
 };
 
 export const userReducer = (user = initialUser, action) => {

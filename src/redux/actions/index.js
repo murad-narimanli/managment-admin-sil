@@ -28,6 +28,7 @@ export const registerAdmin = (values) => (dispatch) => {
 };
 
 export const getCompany = (id) => async (dispatch) => {
+    debugger;
     if (!id) {
         id = localStorage.getItem("access_token") || sessionStorage.getItem("access_token");
     }
@@ -43,8 +44,8 @@ export const getCompany = (id) => async (dispatch) => {
             dispatch({
                 type: Types.SET_COMPANY,
                 payload: {
-                    companyData: res.data,
                     isLoggedIn: typeof res.data.id === "number" ? res.data.id : false,
+                    companyData: res.data,
                 },
             });
         })
@@ -86,47 +87,25 @@ export const logIn = (u, p, remember) => async (dispatch) => {
 };
 
 export const createUser = (values) => (dispatch) => {
-    axiosPlugin
-        .post("/companies", {
-            name: values.name,
-            surname: values.surname,
-            username: values.username,
-            email: values.email,
-            password: values.password,
-            isCompany: false,
-            companyId: values.companyId,
-            companyName: values.companyName,
-            role: {
-                admin: false,
-                editTask: values.editTask,
-                addTask: values.addTask,
-                deleteTask: values.deleteTask,
-                changeStatus: values.changeStatus,
-                changeSettings: values.changeSettings,
-            },
-        })
-        .then((res) => {
-            console.log(res, "user registered");
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-};
-
-export const getCompanyUsers = () => async (dispatch) => {
-    axiosPlugin
-        .get(`/companies`)
-        .then((res) => {
-            dispatch({
-                type: Types.SET_COMPANY_USERS,
-                payload: {
-                    companyUsersData: res.data,
-                },
-            });
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+    console.log("data objesi: ", values);
+    return axiosPlugin.post("/companies", {
+        name: values.name,
+        surname: values.surname,
+        username: values.username,
+        email: values.email,
+        password: values.password,
+        isCompany: false,
+        companyId: values.companyId,
+        companyName: values.companyName,
+        role: {
+            admin: false,
+            editTask: values.editTask,
+            addTask: values.addTask,
+            deleteTask: values.deleteTask,
+            changeStatus: values.changeStatus,
+            changeSettings: values.changeSettings,
+        },
+    });
 };
 
 export const logOut = () => (dispatch) => {
