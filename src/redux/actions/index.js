@@ -1,5 +1,7 @@
 import { Types } from "../types";
 import axiosPlugin from "../../api/axiosPlugin";
+import {notification } from "antd";
+
 
 export const registerAdmin = (values) => (dispatch) => {
     let id = parseInt(Number(Math.random() * Date.now()));
@@ -21,6 +23,10 @@ export const registerAdmin = (values) => (dispatch) => {
         .then((res) => {
             console.log(res, " admin registered ");
             localStorage.setItem("access_token", res.data.id);
+            notification.open({
+                message: "Congratulations,your account has been successfully created",
+                description: `User name: ${res.data.username}`,
+            });
         })
         .catch((err) => {
             console.log(err);
@@ -28,7 +34,6 @@ export const registerAdmin = (values) => (dispatch) => {
 };
 
 export const getCompany = (id) => async (dispatch) => {
-    debugger;
     if (!id) {
         id = localStorage.getItem("access_token") || sessionStorage.getItem("access_token");
     }

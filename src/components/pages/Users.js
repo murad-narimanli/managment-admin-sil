@@ -8,6 +8,8 @@ import axiosPlugin from "../../api/axiosPlugin";
 const Users = ({ companyData, createUser }) => {
     const [form] = Form.useForm();
     const [companies, setCompanies] = useState([]);
+    const [editing, setEditing] = useState(null);
+
     const getData = async () => {
         if (!companyData.companyId) {
             console.warn("Invalid Id");
@@ -27,15 +29,25 @@ const Users = ({ companyData, createUser }) => {
         getData();
     }, []);
 
-    const onFinish = (data) => {
-        console.log({ data });
-        const existingCompany = companies.find((c) => c.email === data.email);
+    const isBad = (array, data) => {
+        return array.some((user) => {
+            if (user.username.toLowerCase() === data.username.toLowerCase()) {
+                return true;
+            }
+            if (user.email.toLowerCase() === data.email.toLowerCase()) {
+                return true;
+            }
+            return false;
+        });
+    };
 
-        if (existingCompany) {
+    const onFinish = (data) => {
+        let isCreated = isBad(companies, data);
+        if (isCreated && editing) {
             axiosPlugin
-                .put(`/companies/${existingCompany.id}`, {
-                    companyId: existingCompany.companyId,
-                    companyname: existingCompany.companyname,
+                .put(`/companies/${editing}`, {
+                    companyId: companyData.companyId,
+                    companyname: companyData.companyname, //??companyname
                     name: data.name,
                     surname: data.surname,
                     username: data.username,
@@ -57,20 +69,27 @@ const Users = ({ companyData, createUser }) => {
                         description: `User name: ${res.data.username}`,
                     });
                     getData();
+                    cancelEdit();
                 });
-        } else {
+        } else if (!isCreated && !editing) {
             createUser({ ...data, companyId: companyData.companyId, companyName: companyData.companyname }).then((res) => {
                 notification.open({
                     message: "Successfully added",
                     description: `User name: ${res.data.username}`,
                 });
                 getData();
+                cancelEdit();
+            });
+        } else {
+            notification.open({
+                message: "Already registered",
             });
         }
     };
 
     const cancelEdit = () => {
         form.resetFields();
+        setEditing(null);
     };
 
     const columns = [
@@ -134,7 +153,7 @@ const Users = ({ companyData, createUser }) => {
     ];
     const editData = (id) => {
         let editedData = companies.find((s) => s.id === id);
-
+        setEditing(id);
         form.setFieldsValue({
             name: editedData.username,
             surname: editedData.surname,
@@ -163,6 +182,7 @@ const Users = ({ companyData, createUser }) => {
                     message: "Some error ocurred",
                 });
             });
+        setEditing(null);
     };
 
     return (
@@ -281,5 +301,4 @@ const Users = ({ companyData, createUser }) => {
 const mapStateToProps = (state) => ({
     companyData: state.user.companyData,
 });
-
 export default connect(mapStateToProps, { createUser })(Users);

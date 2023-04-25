@@ -1,40 +1,114 @@
 {
-    "companies": [
-        {
-            "id": 1188477930936,
-            "username": "gullu",
-            "companyname": "SIL",
-            "email": "ghuseynova.dev@gmail.com",
-            "password": "1",
-            "isCompany": true,
-            "companyId": 1188477930936,
-            "role": {
-                "admin": true,
-                "editTask": true,
-                "addTask": true,
-                "deleteTask": true,
-                "changeStatus": true,
-                "changeSettings": true
-            }
-        },
-        {
-            "name": "myuser",
-            "surname": "myuser",
-            "username": "myuser1",
-            "email": "myuser@gmail.com",
-            "password": "11",
-            "isCompany": false,
-            "companyId": 1188477930936,
-            "companyName": "SIL",
-            "role": {
-                "admin": false,
-                "editTask": false,
-                "addTask": false,
-                "deleteTask": true,
-                "changeStatus": true,
-                "changeSettings": false
-            },
-            "id": 1188477930937
-        }
-    ]
+  "companies": [
+    {
+      "id": 1188477930936,
+      "username": "gullu",
+      "companyname": "SIL",
+      "email": "ghuseynova.dev@gmail.com",
+      "password": "1",
+      "isCompany": true,
+      "companyId": 1188477930936,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
+    },
+    {
+      "name": "salam",
+      "surname": "salam",
+      "username": "salam",
+      "email": "gullusalam@gmail.com",
+      "password": "1",
+      "isCompany": false,
+      "companyId": 1188477930936,
+      "companyName": "SIL",
+      "role": {
+        "admin": false,
+        "editTask": false,
+        "addTask": false,
+        "deleteTask": false,
+        "changeStatus": false,
+        "changeSettings": false
+      },
+      "id": 1188477930939
+    },
+    {
+      "id": 539479134986,
+      "username": "Narmin",
+      "companyname": "GNN",
+      "email": "narmin@gmail.com",
+      "password": "11",
+      "isCompany": true,
+      "companyId": 539479134986,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
+    },
+    {
+      "name": "narminsUser1",
+      "surname": "Abdulova",
+      "username": "narminsUser1",
+      "email": "narminsUser1@gmail.com",
+      "password": "11",
+      "isCompany": false,
+      "companyId": 539479134986,
+      "companyName": "GNN",
+      "role": {
+        "admin": false,
+        "editTask": false,
+        "addTask": false,
+        "deleteTask": false,
+        "changeStatus": false,
+        "changeSettings": false
+      },
+      "id": 1188477930940
+    },
+    {
+      "name": "deneme",
+      "surname": "deneme",
+      "username": "deneme",
+      "email": "deneme@gmail.com",
+      "password": "11",
+      "isCompany": false,
+      "companyId": 1188477930936,
+      "companyName": "SIL",
+      "role": {
+        "admin": false,
+        "editTask": false,
+        "addTask": false,
+        "deleteTask": false,
+        "changeStatus": false,
+        "changeSettings": false
+      },
+      "id": 1188477930941
+    },
+    {
+      "name": "narminsUser2",
+      "surname": "narminsUser2",
+      "username": "narminsUser2",
+      "email": "narminsUser2@gmail.com",
+      "password": "12",
+      "isCompany": false,
+      "companyId": 539479134986,
+      "companyName": "GNN",
+      "role": {
+        "admin": false,
+        "editTask": false,
+        "addTask": false,
+        "deleteTask": false,
+        "changeStatus": false,
+        "changeSettings": false
+      },
+      "id": 1188477930942
+    }
+  ]
 }
