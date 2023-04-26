@@ -1,22 +1,21 @@
 import React from "react";
-import { Button, Form, Input, message, Typography } from "antd";
+import { Button, Form, Input, Typography } from "antd";
 import { registerAdmin } from "../../redux/actions";
 import { connect } from "react-redux";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../assets/css/registration.scss";
 
 const Registration = (props) => {
-    const { user, registerAdmin, registered, getData } = props;
-    let navigate = useNavigate();
 
-    const registerUser = (...values) => {
+
+    const onFinish = (...values) => {
         props.registerAdmin(...values);
     };
 
     return (
         <div className="appBg">
             <h3>Manage Your Tasks</h3>
-            <Form name="basic" onFinish={registerUser} className="loginForm">
+            <Form name="basic" onFinish={onFinish} className="loginForm">
                 <Typography.Title className="title">Create Your Account</Typography.Title>
 
                 <Form.Item

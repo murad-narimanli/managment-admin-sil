@@ -94,12 +94,11 @@ const Users = ({ companyData, createUser }) => {
 
     const columns = [
         {
-            title: "Sıra",
+            title: "ID",
             dataIndex: "id",
             key: "number",
             sorter: (a, b) => a.id - b.id,
-            render: (id, record, index) => {
-                ++index;
+            render: (index) => {
                 return index;
             },
         },
@@ -207,7 +206,7 @@ const Users = ({ companyData, createUser }) => {
                             { required: true, message: "Fill name field" },
                             {
                                 type: "string",
-                                min: 5,
+                                min: 2,
                             },
                         ]}
                     >
@@ -220,7 +219,7 @@ const Users = ({ companyData, createUser }) => {
                             { required: true, message: "Fill surname field" },
                             {
                                 type: "string",
-                                min: 5,
+                                min: 2,
                             },
                         ]}
                     >
@@ -233,7 +232,7 @@ const Users = ({ companyData, createUser }) => {
                             { required: true, message: "Fill username field" },
                             {
                                 type: "string",
-                                min: 5,
+                                min: 2,
                             },
                         ]}
                     >

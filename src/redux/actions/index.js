@@ -21,9 +21,9 @@ export const registerAdmin = (values) => (dispatch) => {
             },
         })
         .then((res) => {
-            console.log(res, " admin registered ");
             localStorage.setItem("access_token", res.data.id);
             notification.open({
+                type: "success",
                 message: "Congratulations,your account has been successfully created",
                 description: `User name: ${res.data.username}`,
             });
@@ -66,7 +66,7 @@ export const logIn = (u, p, remember) => async (dispatch) => {
     if (u.trim().length === 0 || p.trim().length === 0) {
         dispatch({
             type: Types.SET_USER_ERROR,
-            payload: { message: "İstifadəçi adı və şifrə daxil edilməlidir", notify: true },
+            payload: { message: "İstifadəçi adı və şifrə daxil edilməlidir", notify: true }
         });
     } else {
         dispatch({ type: Types.LOADING_ON });
@@ -92,7 +92,6 @@ export const logIn = (u, p, remember) => async (dispatch) => {
 };
 
 export const createUser = (values) => (dispatch) => {
-    console.log("data objesi: ", values);
     return axiosPlugin.post("/companies", {
         name: values.name,
         surname: values.surname,

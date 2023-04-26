@@ -18,25 +18,6 @@
       }
     },
     {
-      "name": "salam",
-      "surname": "salam",
-      "username": "salam",
-      "email": "gullusalam@gmail.com",
-      "password": "1",
-      "isCompany": false,
-      "companyId": 1188477930936,
-      "companyName": "SIL",
-      "role": {
-        "admin": false,
-        "editTask": false,
-        "addTask": false,
-        "deleteTask": false,
-        "changeStatus": false,
-        "changeSettings": false
-      },
-      "id": 1188477930939
-    },
-    {
       "id": 539479134986,
       "username": "Narmin",
       "companyname": "GNN",
@@ -109,6 +90,25 @@
         "changeSettings": false
       },
       "id": 1188477930942
+    },
+    {
+      "name": "myuser",
+      "surname": "myuser",
+      "username": "myuser",
+      "email": "myuser@gmail.com",
+      "password": "11",
+      "isCompany": false,
+      "companyId": 1188477930936,
+      "companyName": "SIL",
+      "role": {
+        "admin": false,
+        "editTask": false,
+        "addTask": false,
+        "deleteTask": false,
+        "changeStatus": false,
+        "changeSettings": false
+      },
+      "id": 1188477930943
     }
   ]
 }

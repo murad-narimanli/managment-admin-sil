@@ -19,12 +19,12 @@ const HeaderMain = ({ setCollapsed, colorBgContainer, collapsed,user,logOut}) =>
                     Log out
                 </Button>
             </Link>
-            
+            <Link to={'/usersettings'}>
             <Button className="me-2 d-flex align-items-center">
                 <LogoutOutlined />
                 Settings
             </Button>
-            
+            </Link>
         </div>
     );
     return (

@@ -13,6 +13,8 @@ export const userReducer = (user = initialUser, action) => {
         case Types.GET_USER:
         case Types.SET_COMPANY_USERS:
             return { ...user, ...action.payload };
+        case Types.SET_USER_ERROR:
+            return { ...user, notify: true, message: action.payload.message };
         default:
             return user;
     }
