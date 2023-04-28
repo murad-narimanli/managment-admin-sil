@@ -1,10 +1,23 @@
 import { Types } from "../types";
 import axiosPlugin from "../../api/axiosPlugin";
-import {notification } from "antd";
+import { notification } from "antd";
 
-
-export const registerAdmin = (values) => (dispatch) => {
+export const registerAdmin = (values) => async (dispatch) => {
     let id = parseInt(Number(Math.random() * Date.now()));
+    try {
+        const allUsers = await axiosPlugin.get("/companies");
+        const emailExists = allUsers.data.some((user) => user.email === values.email);
+        if (emailExists) {
+            notification.error({
+                message: "Registration Error",
+                description: "This email is already in use.",
+            });
+            return;
+        }
+    } catch (error) {
+        console.error("Error while checking email existence:", error);
+        return;
+    }
     axiosPlugin
         .post("/companies", {
             id,
@@ -66,7 +79,7 @@ export const logIn = (u, p, remember) => async (dispatch) => {
     if (u.trim().length === 0 || p.trim().length === 0) {
         dispatch({
             type: Types.SET_USER_ERROR,
-            payload: { message: "İstifadəçi adı və şifrə daxil edilməlidir", notify: true }
+            payload: { message: "İstifadəçi adı və şifrə daxil edilməlidir", notify: true },
         });
     } else {
         dispatch({ type: Types.LOADING_ON });
