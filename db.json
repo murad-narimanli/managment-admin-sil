@@ -92,25 +92,6 @@
       "id": 1188477930942
     },
     {
-      "name": "myuser",
-      "surname": "myuser",
-      "username": "myuser",
-      "email": "myuser@gmail.com",
-      "password": "11",
-      "isCompany": false,
-      "companyId": 1188477930936,
-      "companyName": "SIL",
-      "role": {
-        "admin": false,
-        "editTask": false,
-        "addTask": false,
-        "deleteTask": false,
-        "changeStatus": false,
-        "changeSettings": false
-      },
-      "id": 1188477930943
-    },
-    {
       "id": 579533138372,
       "username": "narminnn",
       "companyname": "narminnn",
@@ -162,6 +143,25 @@
         "changeSettings": false
       },
       "id": 1532328856523
+    },
+    {
+      "companyId": 1188477930936,
+      "companyname": "SIL",
+      "name": "novruz",
+      "surname": "düdüdüdüd",
+      "username": "novruz",
+      "email": "novruz@gmail.com",
+      "password": "efaüf",
+      "isCompany": false,
+      "role": {
+        "admin": false,
+        "editTask": false,
+        "deleteTask": false,
+        "addTask": true,
+        "changeStatus": false,
+        "changeSettings": true
+      },
+      "id": 1532328856524
     }
   ]
 }
