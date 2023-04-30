@@ -162,6 +162,184 @@
         "changeSettings": false
       },
       "id": 1532328856523
+    },
+    {
+      "id": 644116300082,
+      "username": "deneme",
+      "companyname": "SIL",
+      "email": "nermis12345@gmail.com",
+      "password": "denem123",
+      "isCompany": true,
+      "companyId": 644116300082,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
+    },
+    {
+      "name": "den",
+      "surname": "dene",
+      "username": "dene",
+      "email": "deneme.dene@gmail.com",
+      "password": "dene123",
+      "isCompany": false,
+      "companyId": 644116300082,
+      "companyName": "SIL",
+      "role": {
+        "admin": false,
+        "editTask": true,
+        "addTask": false,
+        "deleteTask": false,
+        "changeStatus": false,
+        "changeSettings": false
+      },
+      "id": 1532328856524
+    },
+    {
+      "name": "de",
+      "surname": "ne",
+      "username": "me",
+      "email": "deneme.ne@gmail.ocm",
+      "password": "deneme987",
+      "isCompany": false,
+      "companyId": 644116300082,
+      "companyName": "SIL",
+      "role": {
+        "admin": false,
+        "editTask": false,
+        "addTask": true,
+        "deleteTask": false,
+        "changeStatus": false,
+        "changeSettings": false
+      },
+      "id": 1532328856525
+    },
+    {
+      "id": 1005509765099,
+      "username": "yeni",
+      "companyname": "YEN",
+      "email": "yeniden.yeni@gmail.com",
+      "password": "yeniden123",
+      "isCompany": true,
+      "companyId": 1005509765099,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
+    },
+    {
+      "id": 797394825994,
+      "username": "new",
+      "companyname": "NEW",
+      "email": "new",
+      "password": "new123",
+      "isCompany": true,
+      "companyId": 797394825994,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
+    },
+    {
+      "id": 833078052907,
+      "username": "new",
+      "companyname": "NEW",
+      "email": "newwww.new@gmail.com",
+      "password": "new321",
+      "isCompany": true,
+      "companyId": 833078052907,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
+    },
+    {
+      "name": "yeni",
+      "surname": "yeniyeni",
+      "username": "yenine",
+      "email": "yeni.nene@gmail.com",
+      "password": "yeni987",
+      "isCompany": false,
+      "companyId": 833078052907,
+      "companyName": "NEW",
+      "role": {
+        "admin": false,
+        "editTask": true,
+        "addTask": false,
+        "deleteTask": false,
+        "changeStatus": false,
+        "changeSettings": false
+      },
+      "id": 1532328856526
+    },
+    {
+      "id": 1363254625306,
+      "username": "random",
+      "companyname": "RA",
+      "email": "random.ra@gmail.com",
+      "password": "random123",
+      "isCompany": true,
+      "companyId": 1363254625306,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
+    },
+    {
+      "name": "rend",
+      "surname": "rendo",
+      "username": "rero",
+      "email": "rero.rendo@gmail.com",
+      "password": "rero123",
+      "isCompany": false,
+      "companyId": 1363254625306,
+      "companyName": "RA",
+      "role": {
+        "admin": false,
+        "editTask": true,
+        "addTask": false,
+        "deleteTask": false,
+        "changeStatus": true,
+        "changeSettings": false
+      },
+      "id": 1532328856527
+    },
+    {
+      "id": 241039580569,
+      "username": "narmin",
+      "companyname": "SIL",
+      "email": "nermin.abdulova1@gmail.com",
+      "password": "123",
+      "isCompany": true,
+      "companyId": 241039580569,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
     }
   ]
 }
