@@ -1,4 +1,4 @@
-import { UploadOutlined, FundOutlined, UserOutlined, VideoCameraOutlined } from "@ant-design/icons";
+import {UserOutlined} from "@ant-design/icons";
 import { Menu } from "antd";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -20,11 +20,9 @@ const MenuItems = ({ companyData }) => {
             setOpenKeys(opens);
         }
     };
-    // const shouldUserSee = [].find((id) => id === myId).length > 0;
 
     return (
         <Menu openKeys={openKeys} mode="inline" theme="dark" onOpenChange={onOpenChange} className="menu-ul">
-            {/* {shouldUserSee && ( */}
                 <SubMenu
                     key="10"
                     title={
@@ -36,7 +34,6 @@ const MenuItems = ({ companyData }) => {
                         </span>
                     }
                 />
-            {/* )} */}
             {companyData?.role?.admin && (
                 <SubMenu
                     key="20"

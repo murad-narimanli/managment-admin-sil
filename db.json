@@ -162,6 +162,44 @@
         "changeSettings": false
       },
       "id": 1532328856523
+    },
+    {
+      "name": "gullu",
+      "surname": "salam",
+      "username": "salam",
+      "email": "salam@gmail.com",
+      "password": "1",
+      "isCompany": false,
+      "companyId": 1188477930936,
+      "companyName": "SIL",
+      "role": {
+        "admin": false,
+        "editTask": false,
+        "addTask": false,
+        "deleteTask": false,
+        "changeStatus": false,
+        "changeSettings": false
+      },
+      "id": 1532328856524
+    },
+    {
+      "name": "denemee",
+      "surname": "denemee",
+      "username": "denemee",
+      "email": "denemee@gmail.com",
+      "password": "11",
+      "isCompany": false,
+      "companyId": 1188477930936,
+      "companyName": "SIL",
+      "role": {
+        "admin": false,
+        "editTask": false,
+        "addTask": false,
+        "deleteTask": false,
+        "changeStatus": false,
+        "changeSettings": false
+      },
+      "id": 1532328856525
     }
   ]
 }

@@ -8,8 +8,7 @@ import { Link } from "react-router-dom";
 const { Header } = Layout;
 
 const HeaderMain = ({ setCollapsed, colorBgContainer, collapsed,user,logOut}) => {
-
-    const text = <span>{user.companyData.first_name + ' ' + user.companyData.last_name}</span>;
+    const text = <span>User: {user.companyData.username}</span>;
 
     const content = (
         <div className="d-flex justify-content-between">
