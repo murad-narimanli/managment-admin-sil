@@ -6,6 +6,51 @@ const initialUser = {
     companyData: {},
 };
 
+const taskState = {
+    loading: false,
+    data:[]
+  }
+
+  const modalData = {
+    modalOpen: false,
+    editing:1,
+    editingData:{}
+}
+
+export function modalReducer(modal= modalData, action) {
+  switch (action.type) {
+    case Types.SET_MODAL_ADD:
+      return action.payload
+    case Types.CLEAR_MODAL_ADD:
+      return action.payload
+    default:
+      return modalData;
+  }
+}
+
+
+
+
+  export function tasksReducer (tasks= taskState, action) {
+    switch (action.type) {
+      case Types.GET_TASKS_LOADING:
+        return {
+          loading: true,
+          data:[]
+        };
+      case Types.GET_TASKS:
+        return {
+          loading: false,
+          data:action.payload
+        };
+      default:
+        return taskState;
+    }
+  }
+
+
+
+
 export const userReducer = (user = initialUser, action) => {
     switch (action.type) {
         case Types.SET_COMPANY:

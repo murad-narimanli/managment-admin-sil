@@ -137,3 +137,58 @@ export const logOut = () => (dispatch) => {
         },
     });
 };
+
+
+
+
+export const setVisibleAddModal = (modalOpen, editing=null , editingData = {}) => async (dispatch) => {
+    console.log('setVisibleAddModal')
+    if (modalOpen){
+        await  dispatch({
+        type: Types.SET_MODAL_ADD,
+        payload: {
+          modalOpen,
+          editing,
+          editingData
+        }
+      });
+    }
+    else{
+      dispatch({
+        type: Types.CLEAR_MODAL_ADD,
+          payload: {
+              modalOpen,
+              editing:null,
+              editingData:{}
+        }
+      });
+    }
+};
+
+
+
+export const getTasks = (params) => async (dispatch) => {
+    dispatch({
+      type: Types.GET_TASKS_LOADING,
+    });
+    await axiosPlugin
+        .get(`tasks` , {params})
+        .then((res) => {
+          dispatch({
+            type: Types.GET_TASKS,
+            payload: {
+              data: res.data,
+              loading:false
+            }
+          });
+        }).catch(() => {
+            dispatch({
+              type: Types.GET_TASKS,
+              payload: {
+                data: [],
+                loading:false
+              }
+           });
+       })
+  };
+  
