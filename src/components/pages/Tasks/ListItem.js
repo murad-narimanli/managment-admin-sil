@@ -135,7 +135,7 @@ const ListItem = ({ item, index , setVisibleAddModal , getTasks , users  , user}
 const mapStateToProps = ({ modalData , user }) => {
     return {
         modalData,
-        user:user.data
+        user:user.companyData
     };
 };
 

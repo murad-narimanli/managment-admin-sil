@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Button, Col, DatePicker, Form, Input, Row, Select, notification } from "antd";
+import { Button, Col, DatePicker, Form, Input, Row, Select, notification  } from "antd";
 import { whiteSpace, noWhitespace } from "../../../utils/rules";
 import { connect } from "react-redux";
 import { getTasks,setVisibleAddModal } from "../../../redux/actions";
 import moment from "moment";
 import axiosPlugin from "../../../api/axiosPlugin";
 const { Option } = Select;
+const { TextArea } = Input;
 
 const AddModal = (props) => {
     const { companyData } = props;
@@ -107,6 +108,7 @@ const AddModal = (props) => {
                                 name={`description`}
                                 rules={[whiteSpace("inputError")]}
                             >
+                                <TextArea/>
                             </Form.Item>
                         </Col>
 
@@ -178,9 +180,9 @@ const AddModal = (props) => {
     );
 };
 
-const mapStateToProps = ({ modalData, state }) => {
+const mapStateToProps = ({ modalData, user }) => {
     return {
-        companyData: state.user.companyData,
+        companyData: user.companyData,
         modalData,
     };
 };

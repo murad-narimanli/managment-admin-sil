@@ -140,7 +140,7 @@ function DragList({user , tasks , getTasks }) {
 const mapStateToProps = ({ tasks, user}) => {
     console.log({user})
     return {
-        user: user.data,
+        user: user.companyData,
         tasks:tasks?.data,
     };
     

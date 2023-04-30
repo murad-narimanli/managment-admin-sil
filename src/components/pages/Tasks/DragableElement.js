@@ -31,10 +31,9 @@ const DraggableElement = ({ prefix, elements, companyData, allUsers }) => (
     </DroppableStyles>
 );
 
-const mapStateToProps = ( state ) => {
+const mapStateToProps = ( {user} ) => {
     return {
-        companyData: state.user.companyData,
-        
+        companyData: user.companyData,
     };
 };
 
