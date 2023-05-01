@@ -2,7 +2,8 @@ import { Layout, theme } from "antd";
 import React, { useState } from "react";
 import MenuItems from "../elements/MenuItems";
 import HeaderMain from "./Header";
-const { Header, Sider, Content } = Layout;
+import "../../assets/css/main.scss";
+const { Sider, Content } = Layout;
 
 const MainLayout = (props) => {
     const [collapsed, setCollapsed] = useState(false);
@@ -13,7 +14,7 @@ const MainLayout = (props) => {
 
     return (
         <Layout className="main-layout">
-            <Sider trigger={null} collapsible collapsed={collapsed}>
+            <Sider trigger={null} collapsible collapsed={collapsed} className="menu-wrapper">
                 <MenuItems />
             </Sider>
             <Layout className="site-layout">

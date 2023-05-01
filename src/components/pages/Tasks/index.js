@@ -7,8 +7,7 @@ import DragList from "./DragList";
 import Modal from "antd/es/modal/Modal";
 import AddModal from "./AddModal";
 
-const Tasks = (props) => {
-    const { setVisibleAddModal } = props;
+const Tasks = ({ setVisibleAddModal, user, modalData }) => {
 
     const showModal = () => {
         setVisibleAddModal(true, null, {});
@@ -18,13 +17,13 @@ const Tasks = (props) => {
         <div>
             <Row gutter={[10, 10]}>
                 <Col xs={24}>
-                    <div className="border flex flex-between animated fadeInDown p-2 mt-0 bg-white">
+                    <div className="border animated fadeInDown p-2 mt-0 bg-white tasks-header">
                         <div>
                             <UnorderedListOutlined className="f-20 mr5-15" />
                             <span className="f-20 bold">Tasks</span>
                         </div>
                         <div>
-                            <Button onClick={showModal} type={"primary"}>
+                           <Button onClick={showModal} type={"primary"} disabled={!user.role.addTask} className="add-task-btn">
                                 Add Task
                             </Button>
                         </div>
@@ -38,9 +37,9 @@ const Tasks = (props) => {
             </Row>
 
             <Modal
-                title={props.modalData.editing ? "Edit" : "Add" + " " + "task"}
+                title={modalData.editing ? "Edit" : "Add task"}
                 centered
-                open={props.modalData.modalOpen}
+                open={modalData.modalOpen}
                 className="padModal"
                 onOk={() => setVisibleAddModal(false)}
                 onCancel={() => {
@@ -54,9 +53,10 @@ const Tasks = (props) => {
     );
 };
 
-const mapStateToProps = ({ modalData }) => {
+const mapStateToProps = ({ modalData, user }) => {
     return {
         modalData,
+        user: user.companyData
     };
 };
 

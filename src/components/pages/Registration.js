@@ -6,15 +6,13 @@ import { Link } from "react-router-dom";
 import "../../assets/css/registration.scss";
 
 const Registration = (props) => {
-
-
     const onFinish = (...values) => {
         props.registerAdmin(...values);
     };
 
     return (
         <div className="appBg">
-            <h3>Manage Your Tasks</h3>
+            <h2 id="register-tite">Manage Your Tasks</h2>
             <Form name="basic" onFinish={onFinish} className="loginForm">
                 <Typography.Title className="title">Create Your Account</Typography.Title>
 

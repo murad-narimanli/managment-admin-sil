@@ -4,6 +4,7 @@ import { UnorderedListOutlined, EditFilled, DeleteFilled } from "@ant-design/ico
 import { createUser } from "../../redux/actions";
 import { connect } from "react-redux";
 import axiosPlugin from "../../api/axiosPlugin";
+import "../../assets/css/main.scss"
 
 const Users = ({ companyData, createUser }) => {
     const [form] = Form.useForm();
@@ -47,7 +48,7 @@ const Users = ({ companyData, createUser }) => {
             axiosPlugin
                 .put(`/companies/${editing}`, {
                     companyId: companyData.companyId,
-                    companyname: companyData.companyname, //??companyname
+                    companyname: companyData.companyname, 
                     name: data.name,
                     surname: data.surname,
                     username: data.username,
@@ -130,6 +131,7 @@ const Users = ({ companyData, createUser }) => {
                                 className="me-2"
                                 shape="circle"
                                 icon={<EditFilled />}
+                                style={{background:"#3d584b"}}
                             />
                         </Tooltip>
                         <Popconfirm
@@ -283,12 +285,12 @@ const Users = ({ companyData, createUser }) => {
                         </Col>
                     </Row>
 
-                    <Form.Item>
+                    <Form.Item className="set-input-btns">
                         <Space>
-                            <Button type="primary" htmlType="submit">
+                            <Button type="primary" htmlType="submit" className="save-btn">
                                 Save
                             </Button>
-                            <Button onClick={cancelEdit}>Cancel</Button>
+                            <Button onClick={cancelEdit} className="cancel-btn">Cancel</Button>
                         </Space>
                     </Form.Item>
                 </Form>

@@ -7,22 +7,27 @@ import { Link } from "react-router-dom";
 
 const { Header } = Layout;
 
-const HeaderMain = ({ setCollapsed, colorBgContainer, collapsed,user,logOut}) => {
+const HeaderMain = ({ setCollapsed, colorBgContainer, collapsed, user, logOut }) => {
     const text = <span>User: {user.companyData.username}</span>;
 
     const content = (
         <div className="d-flex justify-content-between">
-            <Link to={'/'}>
-                <Button onClick={() => {logOut()}} className="me-2 d-flex align-items-center">
+            <Link to={"/"} className="text-decoration-none ">
+                <Button
+                    onClick={() => {
+                        logOut();
+                    }}
+                    className="me-2 d-flex align-items-center profile-btn"
+                >
                     <SettingOutlined />
                     Log out
                 </Button>
             </Link>
-            <Link to={'/usersettings'}>
-            <Button className="me-2 d-flex align-items-center">
-                <LogoutOutlined />
-                Settings
-            </Button>
+            <Link to={"/usersettings"} className="text-decoration-none ">
+                <Button className="me-2 d-flex align-items-center profile-btn">
+                    <LogoutOutlined />
+                    Settings
+                </Button>
             </Link>
         </div>
     );
@@ -41,7 +46,12 @@ const HeaderMain = ({ setCollapsed, colorBgContainer, collapsed,user,logOut}) =>
                     })}
 
                     <Popover placement="bottomLeft" title={text} content={content} trigger="click">
-                        <Avatar src={user.companyData.avatar} className="me-3 d-flex justify-content-center align-items-center" size={30} icon={<UserOutlined />} />
+                        <Avatar
+                            src={user.companyData.avatar}
+                            className="me-3 d-flex justify-content-center align-items-center"
+                            size={30}
+                            icon={<UserOutlined />}
+                        />
                     </Popover>
                 </div>
             </Header>
@@ -49,8 +59,8 @@ const HeaderMain = ({ setCollapsed, colorBgContainer, collapsed,user,logOut}) =>
     );
 };
 
-const mapStateToProps = ({user}) => ({
-    user
+const mapStateToProps = ({ user }) => ({
+    user,
 });
 
 export default connect(mapStateToProps, { logOut })(HeaderMain);

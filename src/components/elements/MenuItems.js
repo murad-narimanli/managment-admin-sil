@@ -1,63 +1,37 @@
-import {UserOutlined} from "@ant-design/icons";
+import { UserOutlined, BookOutlined, UsergroupAddOutlined } from "@ant-design/icons";
 import { Menu } from "antd";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-
-const { SubMenu } = Menu;
+import "../../assets/css/fonts.scss";
 
 const MenuItems = ({ companyData }) => {
     const [openKeys, setOpenKeys] = useState([]);
 
-    const rootSubmenuKeys = ["10", "21", "31", "41", "51", "61"];
-
     const onOpenChange = (openKeysList) => {
-        const latestOpenKey = openKeysList.find((key) => openKeys.indexOf(key) === -1);
-        if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
-            setOpenKeys(openKeysList);
-        } else {
-            const opens = latestOpenKey ? [latestOpenKey] : [];
-            setOpenKeys(opens);
-        }
+        setOpenKeys(openKeysList);
     };
 
     return (
-        <Menu openKeys={openKeys} mode="inline" theme="dark" onOpenChange={onOpenChange} className="menu-ul">
-                <SubMenu
-                    key="10"
-                    title={
-                        <span>
-                            <UserOutlined />
-                            <Link className="text-decoration-none" to={`/tasks`}>
-                                <span>Tasks</span>
-                            </Link>
-                        </span>
-                    }
-                />
+        <Menu openKeys={openKeys} mode="inline" theme="dark" onOpenChange={onOpenChange} className="menu">
+            <h5 id="logo-name">TaskonX</h5>
+            <Menu.Item key="1" icon={<BookOutlined />} className="menu-li">
+                <Link className="text-decoration-none " to={`/tasks`}>
+                    <span>Tasks</span>
+                </Link>
+            </Menu.Item>
             {companyData?.role?.admin && (
-                <SubMenu
-                    key="20"
-                    title={
-                        <span>
-                            <UserOutlined />
-                            <Link className="text-decoration-none" to={`/users`}>
-                                <span>Users</span>
-                            </Link>
-                        </span>
-                    }
-                />
+                <Menu.Item key="2" icon={<UsergroupAddOutlined />} className="menu-li">
+                    <Link className="text-decoration-none " to={`/users`}>
+                        <span>Users</span>
+                    </Link>
+                </Menu.Item>
             )}
-            <SubMenu
-                key="11"
-                title={
-                    <span>
-                        <UserOutlined />
-                        <Link className="text-decoration-none" to={`/usersettings`}>
-                            <span>User Settings</span>
-                        </Link>
-                    </span>
-                }
-            />
+            <Menu.Item key="3" icon={<UserOutlined />} className="menu-li">
+                <Link className="text-decoration-none " to={`/usersettings`}>
+                    <span>User Settings</span>
+                </Link>
+            </Menu.Item>
         </Menu>
     );
 };

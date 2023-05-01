@@ -78,7 +78,7 @@ const UserSettings = (props) => {
                     <span className="f-20 bold ms-3">User info</span>
                 </div>
             </Col>
-            <Col lg={props.companyData.role.changeSettings ? 12 : 24} xs={24}>
+            <Col lg={12} xs={24}>
                 <Card>
                     <div>
                         <List
@@ -100,7 +100,7 @@ const UserSettings = (props) => {
                             }}
                         />
                         <div>
-                            <Button onClick={setEditingObject} type="primary" size="large" className="mt-4 w-100">
+                            <Button onClick={setEditingObject} type="primary" size="large" className="mt-4 w-100 edit-btn">
                                 <EditOutlined className="ml-10" />
                                 Edit
                             </Button>
@@ -155,13 +155,13 @@ const UserSettings = (props) => {
                             <Input.Password />
                         </Form.Item>
 
-                        <div className="flex flex-end">
+                        <div className="set-input-btns">
                             <Form.Item>
-                                <Button size="large" type="primary" className="mr-10" htmlType="submit">
+                                <Button size="large" type="primary" className="mr-10 save-btn" htmlType="submit" >
                                     Save
                                 </Button>
                             </Form.Item>
-                            <Button onClick={cancelEditing} size="large">
+                            <Button onClick={cancelEditing} size="large" className="cancel-btn">
                                 Cancel
                             </Button>
                         </div>

@@ -8,11 +8,9 @@ import axiosPlugin from "../../../api/axiosPlugin";
 const { Option } = Select;
 const { TextArea } = Input;
 
-const AddModal = (props) => {
-    const { companyData } = props;
+const AddModal = ({ companyData, setVisibleAddModal, modalData, getTasks }) => {
     const [form] = Form.useForm();
     const [users, setUsers] = useState([]);
-    let { setVisibleAddModal, modalData, getTasks } = props;
     let { editing, editingData } = modalData;
 
     const randomRgbColor = () => {
@@ -63,8 +61,11 @@ const AddModal = (props) => {
                 .then(() => {
                     setVisibleAddModal(false);
                     form.resetFields();
-                    notification.open("", true);
-                    getTasks();
+                    notification.open({
+                        type: "success",
+                        message: "Task has been successfully created",
+                    });
+                    getTasks(companyData.companyId);
                 })
                 .catch((err) => {
                     notification.open(err.response, false);
@@ -79,10 +80,10 @@ const AddModal = (props) => {
             axiosPlugin
                 .put("tasks" + `/` + editing, objPut)
                 .then(() => {
-                    getTasks();
+                    getTasks(companyData.companyId);
                     setVisibleAddModal(false);
                     form.resetFields();
-                    notification.open("", true);
+                    notification.open( {message: "Successfully edited"});
                 })
                 .catch((err) => {
                     notification.open(err.response, false);

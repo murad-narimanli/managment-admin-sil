@@ -70,7 +70,7 @@ function DragList({user , tasks , getTasks }) {
 
 
      useEffect(() => {
-         getTasks()
+         getTasks(user.companyId)
          getUsers()
      }, []);
 
@@ -95,7 +95,7 @@ function DragList({user , tasks , getTasks }) {
                    status:result.destination.droppableId,
                    prefix:result.destination.droppableId
                }).then(() =>{
-                   getTasks()
+                   getTasks(user.companyId)
                })
            }
            listCopy[result.source.droppableId] = newSourceList;
@@ -138,7 +138,6 @@ function DragList({user , tasks , getTasks }) {
 
 
 const mapStateToProps = ({ tasks, user}) => {
-    console.log({user})
     return {
         user: user.companyData,
         tasks:tasks?.data,

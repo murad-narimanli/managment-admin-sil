@@ -34,7 +34,7 @@ export const registerAdmin = (values) => async (dispatch) => {
             },
         })
         .then((res) => {
-            localStorage.setItem("access_token", res.data.id);
+            // localStorage.setItem("access_token", res.data.id);
             notification.open({
                 type: "success",
                 message: "Congratulations,your account has been successfully created",
@@ -167,12 +167,16 @@ export const setVisibleAddModal = (modalOpen, editing=null , editingData = {}) =
 
 
 
-export const getTasks = (params) => async (dispatch) => {
+export const getTasks = (companyId) => async (dispatch) => {
     dispatch({
       type: Types.GET_TASKS_LOADING,
     });
     await axiosPlugin
-        .get(`tasks` , {params})
+        .get(`tasks` , {
+            params: {
+                companyId,
+            },
+        })
         .then((res) => {
           dispatch({
             type: Types.GET_TASKS,
