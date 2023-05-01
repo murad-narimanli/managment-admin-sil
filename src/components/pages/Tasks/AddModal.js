@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Button, Col, DatePicker, Form, Input, Row, Select, notification  } from "antd";
+import { Button, Col, DatePicker, Form, Input, Row, Select, notification } from "antd";
 import { whiteSpace, noWhitespace } from "../../../utils/rules";
 import { connect } from "react-redux";
-import { getTasks,setVisibleAddModal } from "../../../redux/actions";
-import moment from "moment";
+import { getTasks, setVisibleAddModal } from "../../../redux/actions";
+import dayjs from "dayjs";
 import axiosPlugin from "../../../api/axiosPlugin";
 const { Option } = Select;
 const { TextArea } = Input;
@@ -26,7 +26,7 @@ const AddModal = ({ companyData, setVisibleAddModal, modalData, getTasks }) => {
         if (editing) {
             form.setFieldsValue({
                 ...editingData,
-                expireDate: moment(editingData.expireDate),
+                expireDate: dayjs(editingData.expireDate),
             });
         } else {
             form.resetFields();
@@ -83,7 +83,7 @@ const AddModal = ({ companyData, setVisibleAddModal, modalData, getTasks }) => {
                     getTasks(companyData.companyId);
                     setVisibleAddModal(false);
                     form.resetFields();
-                    notification.open( {message: "Successfully edited"});
+                    notification.open({ message: "Successfully edited" });
                 })
                 .catch((err) => {
                     notification.open(err.response, false);
@@ -109,7 +109,7 @@ const AddModal = ({ companyData, setVisibleAddModal, modalData, getTasks }) => {
                                 name={`description`}
                                 rules={[whiteSpace("inputError")]}
                             >
-                                <TextArea/>
+                                <TextArea />
                             </Form.Item>
                         </Col>
 
@@ -151,8 +151,8 @@ const AddModal = ({ companyData, setVisibleAddModal, modalData, getTasks }) => {
                             >
                                 <DatePicker
                                     disabledDate={(current) => {
-                                        let customDate = moment().format("YYYY-MM-DD");
-                                        return current && current < moment(customDate, "YYYY-MM-DD");
+                                        let customDate = dayjs().format("YYYY-MM-DD");
+                                        return current && current < dayjs(customDate, "YYYY-MM-DD");
                                     }}
                                     className="w-100"
                                     size="large"
@@ -162,7 +162,7 @@ const AddModal = ({ companyData, setVisibleAddModal, modalData, getTasks }) => {
                     </Row>
 
                     <div className="modalButtons mt-20">
-                        <Button type="primary" htmlType="submit">
+                        <Button type="primary" htmlType="submit" id="save-popup">
                             {"save"}
                         </Button>
                         <Button
@@ -171,6 +171,7 @@ const AddModal = ({ companyData, setVisibleAddModal, modalData, getTasks }) => {
                                 setVisibleAddModal(false);
                                 form.resetFields();
                             }}
+                            id="cancel-popup"
                         >
                             {"cancel"}
                         </Button>

@@ -1,4 +1,24 @@
 {
   "tasks": [],
-  "companies": []
+  "companies": [
+    {
+      "id": 274805333301,
+      "name": "Gullu",
+      "surname": "Huseynova",
+      "username": "Gulia",
+      "companyname": "SIL",
+      "email": "ghuseynova.dev@gmail.com",
+      "password": "1",
+      "isCompany": true,
+      "companyId": 274805333301,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
+    }
+  ]
 }

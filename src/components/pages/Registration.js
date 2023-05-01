@@ -15,7 +15,28 @@ const Registration = (props) => {
             <h2 id="register-tite">Manage Your Tasks</h2>
             <Form name="basic" onFinish={onFinish} className="loginForm">
                 <Typography.Title className="title">Create Your Account</Typography.Title>
-
+                <Form.Item
+                    name="name"
+                    rules={[
+                        {
+                            required: true,
+                            message: "Please input your name!",
+                        },
+                    ]}
+                >
+                    <Input placeholder="Please input your name!" className="input" />
+                </Form.Item>
+                <Form.Item
+                    name="surname"
+                    rules={[
+                        {
+                            required: true,
+                            message: "Please input your surname!",
+                        },
+                    ]}
+                >
+                    <Input placeholder="Please input your surname!" className="input" />
+                </Form.Item>
                 <Form.Item
                     name="username"
                     rules={[

@@ -259,7 +259,7 @@ const Users = ({ companyData, createUser }) => {
                     </Form.Item>
                     <Row>
                         <Col xs={12}>
-                            <Form.Item label="Edit task" valuePropName="checked" name="editTask" initialValue={false}>
+                            <Form.Item label="Edit task" valuePropName="checked" name="editTask" initialValue={false} >
                                 <Switch />
                             </Form.Item>
                         </Col>

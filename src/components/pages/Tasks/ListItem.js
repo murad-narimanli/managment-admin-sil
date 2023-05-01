@@ -6,7 +6,7 @@ import { DeleteFilled, EditFilled } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 import { connect } from "react-redux";
 import { getTasks, setVisibleAddModal } from "../../../redux/actions";
-import moment from "moment";
+import dayjs from "dayjs";
 import axiosPlugin from "../../../api/axiosPlugin";
 
 const CardHeader = styled.div`
@@ -72,7 +72,7 @@ const ListItem = ({ item, index, setVisibleAddModal, getTasks, users, user }) =>
                         </span>
                         <span>
                             {" "}
-                            <b className={"mr-10"}>DeadLine</b> {moment(item.expireDate).format("DD.MM.YYYY")}
+                            <b className={"mr-10"}>DeadLine</b> {dayjs(item.expireDate).format("DD.MM.YYYY")}
                         </span>
                         <CardFooter>
                             <span>
@@ -95,7 +95,7 @@ const ListItem = ({ item, index, setVisibleAddModal, getTasks, users, user }) =>
                                     </Tooltip>
                                     <Popconfirm
                                         placement="bottomRight"
-                                        title={t("areYouSure")}
+                                        title={t("areYouSure?")}
                                         onConfirm={() => deleteTask(item.id)}
                                         okText={"Yes"}
                                         cancelText={"No"}
