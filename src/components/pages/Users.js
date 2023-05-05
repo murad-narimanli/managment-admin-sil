@@ -4,7 +4,7 @@ import { UnorderedListOutlined, EditFilled, DeleteFilled } from "@ant-design/ico
 import { createUser } from "../../redux/actions";
 import { connect } from "react-redux";
 import axiosPlugin from "../../api/axiosPlugin";
-import "../../assets/css/main.scss"
+import "../../assets/css/main.scss";
 
 const Users = ({ companyData, createUser }) => {
     const [form] = Form.useForm();
@@ -48,7 +48,7 @@ const Users = ({ companyData, createUser }) => {
             axiosPlugin
                 .put(`/companies/${editing}`, {
                     companyId: companyData.companyId,
-                    companyname: companyData.companyname, 
+                    companyname: companyData.companyname,
                     name: data.name,
                     surname: data.surname,
                     username: data.username,
@@ -131,7 +131,7 @@ const Users = ({ companyData, createUser }) => {
                                 className="me-2"
                                 shape="circle"
                                 icon={<EditFilled />}
-                                style={{background:"#3d584b"}}
+                                style={{ background: "#3d584b" }}
                             />
                         </Tooltip>
                         <Popconfirm
@@ -156,7 +156,7 @@ const Users = ({ companyData, createUser }) => {
         let editedData = companies.find((s) => s.id === id);
         setEditing(id);
         form.setFieldsValue({
-            name: editedData.username,
+            name: editedData.name,
             surname: editedData.surname,
             username: editedData.username,
             email: editedData.email,
@@ -174,7 +174,7 @@ const Users = ({ companyData, createUser }) => {
             .delete(`/companies/${id}`)
             .then((res) => {
                 notification.open({
-                    message: "Successfully deleted",
+                    message: "User's profile successfully deleted",
                 });
                 getData();
             })
@@ -184,6 +184,7 @@ const Users = ({ companyData, createUser }) => {
                 });
             });
         setEditing(null);
+        cancelEdit();
     };
 
     return (
@@ -259,7 +260,7 @@ const Users = ({ companyData, createUser }) => {
                     </Form.Item>
                     <Row>
                         <Col xs={12}>
-                            <Form.Item label="Edit task" valuePropName="checked" name="editTask" initialValue={false} >
+                            <Form.Item label="Edit task" valuePropName="checked" name="editTask" initialValue={false}>
                                 <Switch />
                             </Form.Item>
                         </Col>
@@ -290,7 +291,9 @@ const Users = ({ companyData, createUser }) => {
                             <Button type="primary" htmlType="submit" className="save-btn">
                                 Save
                             </Button>
-                            <Button onClick={cancelEdit} className="cancel-btn">Cancel</Button>
+                            <Button onClick={cancelEdit} className="cancel-btn">
+                                Cancel
+                            </Button>
                         </Space>
                     </Form.Item>
                 </Form>

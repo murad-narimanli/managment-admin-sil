@@ -1,5 +1,37 @@
 {
-  "tasks": [],
+  "tasks": [
+    {
+      "id": 543143413320,
+      "title": "fewfw",
+      "description": "fwe",
+      "assignedTo": [
+        716677296938,
+        716677296939
+      ],
+      "expireDate": "2023-05-17T19:05:01.397Z",
+      "status": "done",
+      "prefix": "done",
+      "companyId": 716677296938,
+      "createdBy": 716677296938,
+      "color": "rgb(106, 154, 1)",
+      "ids": "item-543143413320"
+    },
+    {
+      "id": 871813902627,
+      "title": "bvfd",
+      "description": "brb",
+      "assignedTo": [
+        274805333303
+      ],
+      "expireDate": "2023-05-15T15:37:31.181Z",
+      "status": "inProgress",
+      "prefix": "inProgress",
+      "companyId": 274805333301,
+      "createdBy": 274805333301,
+      "color": "rgb(148, 102, 192)",
+      "ids": "item-871813902627"
+    }
+  ],
   "companies": [
     {
       "id": 274805333301,
@@ -19,6 +51,44 @@
         "changeStatus": true,
         "changeSettings": true
       }
+    },
+    {
+      "id": 716677296938,
+      "name": "Admin",
+      "surname": "Huseynova",
+      "username": "Admin",
+      "companyname": "NewCompany",
+      "email": "admin@gmail.com",
+      "password": "1",
+      "isCompany": true,
+      "companyId": 716677296938,
+      "role": {
+        "admin": true,
+        "editTask": true,
+        "addTask": true,
+        "deleteTask": true,
+        "changeStatus": true,
+        "changeSettings": true
+      }
+    },
+    {
+      "name": "adminUser",
+      "surname": "adminUser",
+      "username": "adminUser",
+      "email": "adminUser@gmail.com",
+      "password": "1",
+      "isCompany": false,
+      "companyId": 716677296938,
+      "companyName": "NewCompany",
+      "role": {
+        "admin": false,
+        "editTask": false,
+        "addTask": false,
+        "deleteTask": true,
+        "changeStatus": false,
+        "changeSettings": false
+      },
+      "id": 716677296939
     }
   ]
 }
