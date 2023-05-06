@@ -43,7 +43,6 @@ const ListItem = ({ item, index, setVisibleAddModal, getTasks, users, user }) =>
 
     const deleteTask = (id) => {
         axiosPlugin.delete(`tasks/${id}`).then(() => {
-           
             getTasks(user.companyId);
         });
     };
@@ -58,20 +57,18 @@ const ListItem = ({ item, index, setVisibleAddModal, getTasks, users, user }) =>
                 return (
                     <DragItem ref={provided.innerRef} snapshot={snapshot} {...provided.draggableProps} {...provided.dragHandleProps}>
                         <CardHeader>
-                            {" "}
                             <div>
                                 <b>Title</b>
-                            </div>{" "}
+                            </div>
                             {item.title}
                         </CardHeader>
                         <span>
                             <div>
                                 <b>Description</b>
-                            </div>{" "}
+                            </div>
                             {item.description}
                         </span>
                         <span>
-                            {" "}
                             <b className={"mr-10"}>DeadLine</b> {dayjs(item.expireDate).format("DD.MM.YYYY")}
                         </span>
                         <CardFooter>
@@ -112,7 +109,7 @@ const ListItem = ({ item, index, setVisibleAddModal, getTasks, users, user }) =>
                             </Author>
                         </CardFooter>
 
-                        <div className="flex flex-align-center flex-between">
+                        <div className="flex flex-align-center flex-between add-task">
                             <div>
                                 <b>Assigned users</b>
                             </div>
@@ -124,8 +121,8 @@ const ListItem = ({ item, index, setVisibleAddModal, getTasks, users, user }) =>
                                                 key={i}
                                                 title={
                                                     us.isCompany
-                                                        ? us.username + " / " + us.companyName
-                                                        : us.username + " / " + us.name + " " + us.surname
+                                                        ? us.name + " /1 " + us.companyName
+                                                        : us.username + " /2 " + us.name + " " + us.surname
                                                 }
                                                 placement="bottom"
                                             >

@@ -173,14 +173,16 @@ const UserSettings = (props) => {
                             <Form.Item label="Surname" name="surname" validateTrigger="onChange" rules={[whiteSpace("Please input your surname!")]}>
                                 <Input />
                             </Form.Item>
-                            <Form.Item
-                                label="Company Name"
-                                name="companyname"
-                                validateTrigger="onChange"
-                                rules={[whiteSpace("Please input your company name!")]}
-                            >
-                                <Input />
-                            </Form.Item>
+                            {companyData.role.admin && (
+                                <Form.Item
+                                    label="Company Name"
+                                    name="companyname"
+                                    validateTrigger="onChange"
+                                    rules={[whiteSpace("Please input your company name!")]}
+                                >
+                                    <Input />
+                                </Form.Item>
+                            )}
 
                             <Form.Item
                                 label="User Name"

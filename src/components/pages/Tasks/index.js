@@ -20,7 +20,7 @@ const Tasks = ({ setVisibleAddModal, user, modalData }) => {
                     <div className="border animated fadeInDown p-2 mt-0 bg-white tasks-header">
                         <div>
                             <UnorderedListOutlined className="f-20 mr5-15" />
-                            <span className="f-20 bold">Tasks</span>
+                            <span className="f-20 bold ms-3">Tasks</span>
                         </div>
                         <div>
                            <Button onClick={showModal} type={"primary"} disabled={!user.role.addTask} className="add-task-btn">

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import "../../assets/css/fonts.scss";
+import Image from "../../assets/img/image";
 
 const MenuItems = ({ companyData }) => {
     const [openKeys, setOpenKeys] = useState([]);
@@ -14,7 +15,7 @@ const MenuItems = ({ companyData }) => {
 
     return (
         <Menu openKeys={openKeys} mode="inline" theme="dark" onOpenChange={onOpenChange} className="menu">
-            <h5 id="logo-name">TaskonX</h5>
+            <img src={Image.mainLogo} className="main-logo"/>
             <Menu.Item key="1" icon={<BookOutlined />} className="menu-li">
                 <Link className="text-decoration-none " to={`/tasks`}>
                     <span>Tasks</span>

@@ -116,7 +116,7 @@ const AddModal = ({ companyData, setVisibleAddModal, modalData, getTasks }) => {
                         <Col lg={24} md={24}>
                             <Form.Item
                                 className="mb-5"
-                                label={"Assigned users"}
+                                label={"Assigned users1"}
                                 validateTrigger="onChange"
                                 name={`assignedTo`}
                                 rules={[noWhitespace("inputError")]}
@@ -134,7 +134,7 @@ const AddModal = ({ companyData, setVisibleAddModal, modalData, getTasks }) => {
                                 >
                                     {users?.map((user) => (
                                         <Option key={user.id} value={user.id}>
-                                            {user.isCompany ? user.companyName + " / " + user.username : user.name + " " + user.surname}
+                                            {user.isCompany ? user.companyname + " / " + user.username : user.name + " " + user.surname}
                                         </Option>
                                     ))}
                                 </Select>
@@ -163,7 +163,7 @@ const AddModal = ({ companyData, setVisibleAddModal, modalData, getTasks }) => {
 
                     <div className="modalButtons mt-20">
                         <Button type="primary" htmlType="submit" id="save-popup">
-                            {"save"}
+                            {"Save"}
                         </Button>
                         <Button
                             className="ml-10"
@@ -173,7 +173,7 @@ const AddModal = ({ companyData, setVisibleAddModal, modalData, getTasks }) => {
                             }}
                             id="cancel-popup"
                         >
-                            {"cancel"}
+                            {"Cancel"}
                         </Button>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Avatar, Popover, Layout, Button } from "antd";
-import { MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, SettingOutlined, LogoutOutlined } from "@ant-design/icons";
+import {UserOutlined, SettingOutlined, LogoutOutlined } from "@ant-design/icons";
 import { connect } from "react-redux";
 import { logOut } from "../../redux/actions";
 import { Link } from "react-router-dom";
@@ -10,8 +10,7 @@ const { Header } = Layout;
 const HeaderMain = ({ setCollapsed, colorBgContainer, collapsed, user, logOut }) => {
     const text = (
         <span>
-            {" "}
-            <br /> Username: {user.companyData.username} <br /> Email: {user.companyData.email}
+             Username: {user.companyData.username} <br /> Email: {user.companyData.email}
         </span>
     );
 
@@ -44,19 +43,9 @@ const HeaderMain = ({ setCollapsed, colorBgContainer, collapsed, user, logOut })
                     background: colorBgContainer,
                 }}
             >
-                <div className="d-flex justify-content-between align-items-center">
-                    {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                        className: "trigger",
-                        onClick: () => setCollapsed(!collapsed),
-                    })}
-
+                <div className="d-flex justify-content-end align-items-center">
                     <Popover placement="bottomLeft" title={text} content={content} trigger="click">
-                        <Avatar
-                            src={user.companyData.avatar}
-                            className="me-3 d-flex justify-content-center align-items-center"
-                            size={30}
-                            icon={<UserOutlined />}
-                        />
+                        <Avatar className="me-3 mt-3 d-flex justify-content-center align-items-center" size={30} icon={<UserOutlined />} />
                     </Popover>
                 </div>
             </Header>
